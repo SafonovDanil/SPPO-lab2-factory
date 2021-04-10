@@ -19,4 +19,6 @@ HEADERS += \
     ClassUnit.h \
     MethodUnit.h \
     PrintOperatorUnit.h \
-    Unit.h
+    SomeFactory.h \
+    Unit.h \
+    ifactory.h
