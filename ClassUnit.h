@@ -41,8 +41,9 @@ public:
  result += generateShift( level ) + "};\n";
  return result;
  }
-private:
- std::string m_name; using Fields = std::vector< std::shared_ptr< Unit > >;
+protected:
+ std::string m_name;
+ using Fields = std::vector< std::shared_ptr< Unit > >;
  std::vector< Fields > m_fields;
 };
 const std::vector< std::string > ClassUnit::ACCESS_MODIFIERS = { "public",
