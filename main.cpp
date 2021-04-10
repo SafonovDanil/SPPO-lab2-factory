@@ -1,11 +1,11 @@
 #include <QCoreApplication>
 
 #include "Unit.h"
-#include "ClassUnit.h"
-#include "MethodUnit.h"
-#include "PrintOperatorUnit.h"
+#include "CppUnit.h"
+#include "CppMethodUnit.h"
+#include "CppPrintOperatorUnit.h"
 #include "ifactory.h"
-#include "SomeFactory.h"
+#include "CppFactory.h"
 
 
 //std::string generateProgram() {
@@ -33,19 +33,19 @@
 //}
 
 std::string generateProgram(IFactory* factory) {
-    ClassUnit myClass("MyClass" );
+    CppUnit myClass("MyClass" );
 
-    myClass.add(factory->createMethodUnit("testFunc1", "void", 0), ClassUnit::PUBLIC);
+    myClass.add(factory->createMethodUnit("testFunc1", "void", 0), CppUnit::PUBLIC);
 
-    myClass.add(factory->createMethodUnit("testFunc2", "void", MethodUnit::STATIC), ClassUnit::PRIVATE);
+    myClass.add(factory->createMethodUnit("testFunc2", "void", CppMethodUnit::STATIC), CppUnit::PRIVATE);
 
-    myClass.add(factory->createMethodUnit("testFunc3", "void", MethodUnit::VIRTUAL | MethodUnit::CONST), ClassUnit::PUBLIC);
+    myClass.add(factory->createMethodUnit("testFunc3", "void", CppMethodUnit::VIRTUAL | CppMethodUnit::CONST), CppUnit::PUBLIC);
 
-    auto method = factory->createMethodUnit("testFunc4", "void", MethodUnit::STATIC);
+    auto method = factory->createMethodUnit("testFunc4", "void", CppMethodUnit::STATIC);
 
     method->add(factory->createPrintOperatorUnit(R"(Hello,world!\n)"));
 
-    myClass.add(method, ClassUnit::PROTECTED );
+    myClass.add(method, CppUnit::PROTECTED );
 
     return myClass.compile();
 }
@@ -53,7 +53,7 @@ std::string generateProgram(IFactory* factory) {
 
 int main()
 {
-    SomeFactory factory;
+    CppFactory factory;
     std::cout << generateProgram(&factory) << std::endl;
     return 0;
 }
