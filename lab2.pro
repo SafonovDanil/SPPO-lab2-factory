@@ -16,17 +16,17 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    CSharpFactory.h \
-    CSharpMethodUnit.h \
-    CSharpPrintOperatorUnit.h \
-    CSharpUnit.h \
-    CppFactory.h \
-    CppMethodUnit.h \
-    CppPrintOperatorUnit.h \
-    CppUnit.h \
-    JavaFactory.h \
-    JavaMethodUnit.h \
-    JavaPrintOperatorUnit.h \
-    JavaUnit.h \
+    CSharp/CSharpFactory.h \
+    CSharp/CSharpMethodUnit.h \
+    CSharp/CSharpPrintOperatorUnit.h \
+    CSharp/CSharpUnit.h \
+    Cpp/CppFactory.h \
+    Cpp/CppMethodUnit.h \
+    Cpp/CppPrintOperatorUnit.h \
+    Cpp/CppUnit.h \
+    Java/JavaFactory.h \
+    Java/JavaMethodUnit.h \
+    Java/JavaPrintOperatorUnit.h \
+    Java/JavaUnit.h \
     Unit.h \
     ifactory.h

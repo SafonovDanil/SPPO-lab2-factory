@@ -3,6 +3,10 @@
 
 #include "ifactory.h"
 
+#include "CppUnit.h"
+#include "CppMethodUnit.h"
+#include "CppPrintOperatorUnit.h"
+
 class CppFactory : public IFactory
 {
 public:

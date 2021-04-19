@@ -3,6 +3,9 @@
 
 
 #include "ifactory.h"
+#include "JavaUnit.h"
+#include "JavaMethodUnit.h"
+#include "JavaPrintOperatorUnit.h"
 
 class JavaFactory : public IFactory
 {

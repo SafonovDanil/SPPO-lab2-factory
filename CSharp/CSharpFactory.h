@@ -2,6 +2,10 @@
 #define CSHARPFACTORY_H
 #include "ifactory.h"
 
+#include "CSharpUnit.h"
+#include "CSharpMethodUnit.h"
+#include "CSharpPrintOperatorUnit.h"
+
 class CSharpFactory : public IFactory
 {
 public:
