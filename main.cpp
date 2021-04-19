@@ -33,21 +33,23 @@
 //}
 
 std::string generateProgram(IFactory* factory) {
-    CppUnit myClass("MyClass" );
 
-    myClass.add(factory->createMethodUnit("testFunc1", "void", 0), CppUnit::PUBLIC);
+    std::shared_ptr<Unit> myClass = factory->createClassUnit("MyClass");
 
-    myClass.add(factory->createMethodUnit("testFunc2", "void", CppMethodUnit::STATIC), CppUnit::PRIVATE);
 
-    myClass.add(factory->createMethodUnit("testFunc3", "void", CppMethodUnit::VIRTUAL | CppMethodUnit::CONST), CppUnit::PUBLIC);
+    myClass->add(factory->createMethodUnit("testFunc1", "void", 0), CppUnit::PUBLIC);
+
+    myClass->add(factory->createMethodUnit("testFunc2", "void", CppMethodUnit::STATIC), CppUnit::PRIVATE);
+
+    myClass->add(factory->createMethodUnit("testFunc3", "void", CppMethodUnit::VIRTUAL | CppMethodUnit::CONST), CppUnit::PUBLIC);
 
     auto method = factory->createMethodUnit("testFunc4", "void", CppMethodUnit::STATIC);
 
     method->add(factory->createPrintOperatorUnit(R"(Hello,world!\n)"));
 
-    myClass.add(method, CppUnit::PROTECTED );
+    myClass->add(method, CppUnit::PROTECTED );
 
-    return myClass.compile();
+    return myClass->compile();
 }
 
 
