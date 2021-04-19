@@ -6,6 +6,14 @@
 #include "CppMethodUnit.h"
 #include "CppPrintOperatorUnit.h"
 
+#include "CSharpUnit.h"
+#include "CSharpMethodUnit.h"
+#include "CSharpPrintOperatorUnit.h"
+
+#include "JavaUnit.h"
+#include "JavaMethodUnit.h"
+#include "JavaPrintOperatorUnit.h"
+
 class IFactory
 {
 public:
