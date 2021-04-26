@@ -8,8 +8,8 @@ class JavaMethodUnit : public Unit {
 public:
  enum Modifier {
  STATIC = 1,
- CONST = 1 << 1,
- VIRTUAL = 1 << 2
+ ABSTRACT = 1 << 2,
+ FINAL = 1 << 3
  };
 public:
  JavaMethodUnit( const std::string& name, const std::string& returnType, Flags flags ) : m_name( name ), m_returnType( returnType ), m_flags( flags ) { }
@@ -24,16 +24,17 @@ public:
      if( m_flags & STATIC )
      {
         result += "static ";
-     } else if( m_flags & VIRTUAL )
+     }
+     if( m_flags & FINAL )
      {
-        result += "virtual ";
+        result += "final ";
+     }
+     if( m_flags & FINAL )
+     {
+        result += " FINAL";
      }
      result += m_returnType + " ";
      result += m_name + "()";
-     if( m_flags & CONST )
-     {
-        result += " const";
-     }
      result += " {\n";
      for( const auto& b : m_body )
      {
