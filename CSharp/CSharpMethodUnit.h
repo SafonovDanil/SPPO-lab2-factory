@@ -8,8 +8,7 @@ class CSharpMethodUnit : public Unit {
 public:
  enum Modifier {
  STATIC = 1,
- CONST = 1 << 1,
- VIRTUAL = 1 << 2
+ CONST = 1 << 1
  };
 public:
  CSharpMethodUnit( const std::string& name, const std::string& returnType, Flags flags ) : m_name( name ), m_returnType( returnType ), m_flags( flags ) { }
@@ -18,15 +17,13 @@ public:
  {
      m_body.push_back( unit );
  }
+
  std::string compile( unsigned int level = 0 ) const
  {
      std::string result = generateShift( level );
      if( m_flags & STATIC )
      {
         result += "static ";
-     } else if( m_flags & VIRTUAL )
-     {
-        result += "virtual ";
      }
      result += m_returnType + " ";
      result += m_name + "()";

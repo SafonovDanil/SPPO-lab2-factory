@@ -10,7 +10,9 @@ public:
  PUBLIC,
  PROTECTED,
  PRIVATE,
- INTERNAL
+ INTERNAL,
+ PROTECTED_INTERNAL,
+ PRIVATE_PROTECTED     
  };
  static const std::vector< std::string > ACCESS_MODIFIERS;
 public:
@@ -22,9 +24,7 @@ public:
 
  void add( const std::shared_ptr< Unit >& unit, Flags flags )
  {
-
      int accessModifier = PRIVATE;
-
      if( flags < ACCESS_MODIFIERS.size() ) {
         accessModifier = flags;
      }
@@ -54,8 +54,7 @@ protected:
  using Fields = std::vector< std::shared_ptr< Unit > >;
  std::vector< Fields > m_fields;
 };
-const std::vector< std::string > CSharpUnit::ACCESS_MODIFIERS = { "public",
-"protected", "private" };
+const std::vector< std::string > CSharpUnit::ACCESS_MODIFIERS = { "public", "protected", "private", "internal", "protected internal", "private protected" };
 
 
 
