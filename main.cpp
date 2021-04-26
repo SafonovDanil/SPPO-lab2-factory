@@ -1,12 +1,23 @@
 #include <QCoreApplication>
 
 #include "Unit.h"
-#include "CppUnit.h"
-#include "CppMethodUnit.h"
-#include "CppPrintOperatorUnit.h"
 #include "ifactory.h"
-#include "CppFactory.h"
 
+#include "Cpp/CppUnit.h"
+#include "Cpp/CppMethodUnit.h"
+#include "Cpp/CppPrintOperatorUnit.h"
+#include "Cpp/CppFactory.h"
+
+
+#include "CSharp/CSharpUnit.h"
+#include "CSharp/CSharpMethodUnit.h"
+#include "CSharp/CSharpPrintOperatorUnit.h"
+#include "CSharp/CSharpFactory.h"
+
+#include "Java/JavaUnit.h"
+#include "Java/JavaMethodUnit.h"
+#include "Java/JavaPrintOperatorUnit.h"
+#include "Java/JavaFactory.h"
 
 //std::string generateProgram() {
 // ClassUnit myClass( "MyClass" );
@@ -53,10 +64,15 @@ std::string generateProgram(IFactory* factory) {
 }
 
 
+
 int main()
 {
-    CppFactory factory;
-    std::cout << generateProgram(&factory) << std::endl;
+    CppFactory cppfactory;
+    //CSharpFactory csharpfactory;
+    //JavaFactory javafactory;
+    std::cout << generateProgram(&cppfactory) << std::endl;
+    //std::cout << generateProgram(&csharpfactory) << std::endl;
+    //std::cout << generateProgram(&javafactory) << std::endl;
     return 0;
 }
 

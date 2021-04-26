@@ -8,8 +8,8 @@ class JavaMethodUnit : public Unit {
 public:
  enum Modifier {
  STATIC = 1,
- ABSTRACT = 1 << 2,
- FINAL = 1 << 3
+ ABSTRACT = 1 << 4,
+ FINAL = 1 << 5
  };
 public:
  JavaMethodUnit( const std::string& name, const std::string& returnType, Flags flags ) : m_name( name ), m_returnType( returnType ), m_flags( flags ) { }
