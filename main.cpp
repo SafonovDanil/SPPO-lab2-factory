@@ -2,6 +2,8 @@
 
 #include "Unit.h"
 #include "ifactory.h"
+#include "ClassUnit.h"
+#include "MethodUnit.h"
 
 #include "Cpp/CppUnit.h"
 #include "Cpp/CppMethodUnit.h"
@@ -48,17 +50,17 @@ std::string generateProgram(IFactory* factory) {
     std::shared_ptr<Unit> myClass = factory->createClassUnit("MyClass");
 
 
-    myClass->add(factory->createMethodUnit("testFunc1", "void", 0), CppUnit::PUBLIC);
+    myClass->add(factory->createMethodUnit("testFunc1", "void", 0), ClassUnit::PUBLIC);
 
-    myClass->add(factory->createMethodUnit("testFunc2", "void", CppMethodUnit::STATIC), CppUnit::PRIVATE);
+    myClass->add(factory->createMethodUnit("testFunc2", "void", MethodUnit::STATIC), ClassUnit::PRIVATE);
 
-    myClass->add(factory->createMethodUnit("testFunc3", "void", CppMethodUnit::VIRTUAL | CppMethodUnit::CONST), CppUnit::PUBLIC);
+    myClass->add(factory->createMethodUnit("testFunc3", "void", MethodUnit::VIRTUAL | MethodUnit::CONST), ClassUnit::PUBLIC);
 
-    auto method = factory->createMethodUnit("testFunc4", "void", CppMethodUnit::STATIC);
+    auto method = factory->createMethodUnit("testFunc4", "void", MethodUnit::STATIC);
 
     method->add(factory->createPrintOperatorUnit(R"(Hello,world!\n)"));
 
-    myClass->add(method, CppUnit::PROTECTED );
+    myClass->add(method, ClassUnit::PROTECTED );
 
     return myClass->compile();
 }

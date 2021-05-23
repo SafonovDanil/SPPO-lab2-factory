@@ -6,11 +6,7 @@
 class JavaUnit : public Unit
 {
 public:
- enum AccessModifier {
- PUBLIC,
- PROTECTED,
- PRIVATE
- };
+
  static const std::vector< std::string > ACCESS_MODIFIERS;
 public:
 
