@@ -5,13 +5,13 @@
 
 class CSharpPrintOperatorUnit : public Unit {
 public:
- explicit CSharpPrintOperatorUnit( const std::string& text ) :
-m_text( text ) { }
- std::string compile( unsigned int level = 0 ) const {
- return generateShift( level ) + "Colsole.WriteLine(" + m_text + ")\n;";
- }
-private:
+ explicit CSharpPrintOperatorUnit( const std::string& text );
+ std::string compile( unsigned int level = 0 ) const;
+protected:
  std::string m_text;
 };
+
+
+
 
 #endif // CSHARPPRINTOPERATORUNIT_H

@@ -2,29 +2,19 @@
 #define CSHARPFACTORY_H
 #include "ifactory.h"
 
+#include "ClassUnit.h"
+#include "MethodUnit.h"
 #include "CSharpUnit.h"
 #include "CSharpMethodUnit.h"
 #include "CSharpPrintOperatorUnit.h"
 
-class CSharpFactory : public IFactory
+class SharpFactory: public IFactory
 {
 public:
-    CSharpFactory() = default;
-
-    std::shared_ptr<Unit> createClassUnit(const std::string& name) override
-    {
-        return std::make_shared<CSharpUnit>(name);
-    }
-
-    std::shared_ptr<Unit> createMethodUnit(const std::string& name, const std::string& returnType, Flags flags) override
-    {
-        return std::make_shared<CSharpMethodUnit>(name, returnType, flags);
-    }
-
-    std::shared_ptr<Unit> createPrintOperatorUnit(const std::string& text) override
-    {
-        return std::make_shared<CSharpPrintOperatorUnit>(text);
-    }
+    SharpFactory();
+    std::shared_ptr<Unit> createClassUnit(const std::string& name,Flags type) override;
+    std::shared_ptr<Unit> createMethodUnit(const std::string& name, const std::string& returnType, Flags flags) override;
+    std::shared_ptr<Unit> createPrintOperatorUnit(const std::string& text) override;
 };
 
 

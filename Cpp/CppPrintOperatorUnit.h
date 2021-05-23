@@ -1,17 +1,13 @@
-#ifndef PRINTOPERATORUNIT_H
-#define PRINTOPERATORUNIT_H
+#ifndef CPPPRINTOPERATORUNIT_H
+#define CPPPRINTOPERATORUNIT_H
 #include "Unit.h"
 
 class CppPrintOperatorUnit : public Unit {
 public:
- explicit CppPrintOperatorUnit( const std::string& text ) :
-m_text( text ) { }
- std::string compile( unsigned int level = 0 ) const {
- return generateShift( level ) + "printf( \"" + m_text
-+ "\" );\n";
- }
-private:
+ explicit CppPrintOperatorUnit( const std::string& text );
+ std::string compile( unsigned int level = 0 ) const;
+protected:
  std::string m_text;
 };
 
-#endif // PRINTOPERATORUNIT_H
+#endif // CPPPRINTOPERATORUNIT_H

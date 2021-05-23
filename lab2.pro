@@ -8,8 +8,21 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        CSharp/CSharpFactory.cpp \
+        CSharp/CSharpMethodUnit.cpp \
+        CSharp/CSharpPrintOperatorUnit.cpp \
+        CSharp/CSharpUnit.cpp \
         ClassUnit.cpp \
+        Cpp/CppFactory.cpp \
+        Cpp/CppMethodUnit.cpp \
+        Cpp/CppPrintOperatorUnit.cpp \
+        Cpp/CppUnit.cpp \
+        Java/JavaFactory.cpp \
+        Java/JavaMethodUnit.cpp \
+        Java/JavaPrintOperatorUnit.cpp \
+        Java/JavaUnit.cpp \
         MethodUnit.cpp \
+        Unit.cpp \
         main.cpp
 
 # Default rules for deployment.

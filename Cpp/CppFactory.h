@@ -1,32 +1,20 @@
-#ifndef SOMEFACTORY_H
-#define SOMEFACTORY_H
+#ifndef CPPFACTORY_H
+#define CPPFACTORY_H
 
 #include "ifactory.h"
-
+#include "Unit.h"
+#include "ClassUnit.h"
 #include "CppUnit.h"
 #include "CppMethodUnit.h"
 #include "CppPrintOperatorUnit.h"
 
-class CppFactory : public IFactory
+class CppFactory: public IFactory
 {
 public:
-    CppFactory() = default;
-
-    std::shared_ptr<Unit> createClassUnit(const std::string& name) override
-    {
-        return std::make_shared<CppUnit>(name);
-    }
-
-    std::shared_ptr<Unit> createMethodUnit(const std::string& name, const std::string& returnType, Flags flags) override
-    {
-        return std::make_shared<CppMethodUnit>(name, returnType, flags);
-    }
-
-    std::shared_ptr<Unit> createPrintOperatorUnit(const std::string& text) override
-    {
-        return std::make_shared<CppPrintOperatorUnit>(text);
-    }
+    CppFactory();
+    std::shared_ptr<Unit> createClassUnit(const std::string& name,Flags type) override;
+    std::shared_ptr<Unit> createMethodUnit(const std::string& name, const std::string& returnType, Flags flags) override;
+    std::shared_ptr<Unit> createPrintOperatorUnit(const std::string& text) override;
 };
 
-
-#endif // SOMEFACTORY_H
+#endif // CPPFACTORY_H
