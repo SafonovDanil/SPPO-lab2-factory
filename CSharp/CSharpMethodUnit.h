@@ -6,7 +6,7 @@
 class CSharpMethodUnit: public MethodUnit
 {
 public:
-    CSharpMethodUnit(const std::string& name, const std::string& returnType, Flags flags );
+    CSharpMethodUnit(const std::string& name, const std::string& returnType, Flags flags);
     std::string compile( unsigned int level) const;
 };
 

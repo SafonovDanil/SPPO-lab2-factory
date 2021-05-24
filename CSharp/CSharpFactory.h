@@ -8,10 +8,10 @@
 #include "CSharpMethodUnit.h"
 #include "CSharpPrintOperatorUnit.h"
 
-class SharpFactory: public IFactory
+class CSharpFactory: public IFactory
 {
 public:
-    SharpFactory();
+    CSharpFactory();
     std::shared_ptr<Unit> createClassUnit(const std::string& name,Flags type) override;
     std::shared_ptr<Unit> createMethodUnit(const std::string& name, const std::string& returnType, Flags flags) override;
     std::shared_ptr<Unit> createPrintOperatorUnit(const std::string& text) override;

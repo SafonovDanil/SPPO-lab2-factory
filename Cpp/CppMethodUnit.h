@@ -5,7 +5,7 @@
 class CppMethodUnit: public MethodUnit
 {
 public:
-    CppMethodUnit(const std::string& name, const std::string& returnType, Flags flags );
+    CppMethodUnit(const std::string& name, const std::string& returnType, Flags flags);
     std::string compile( unsigned int level) const;
 };
 

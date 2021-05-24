@@ -6,14 +6,15 @@
 class ClassUnit: public Unit
 {
 public:
- enum AccessModifier {
- PUBLIC = 1,
- PROTECTED = 1<<1,
- PRIVATE = 1<<2,
- INTERNAL = 1<<3,
- PROTECTED_INTERNAL1 = 1<<4,
- PRIVATE_PROTECTED = 1<<5
- };
+    enum AccessModifier
+        {
+            PUBLIC=1,
+            PROTECTED=1<<1,
+            PRIVATE=1<<2,
+            INTERNAL=1<<4,
+            PRIVATE_PROTECTED=1<<3,
+            PROTECTED_INTERNAL=1<<5
+        };
  static const std::vector<std::string> ACCESS_MODIFIERS;
  explicit ClassUnit( const std::string& name);
  using Flags = unsigned int;
